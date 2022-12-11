@@ -23,7 +23,23 @@
     <h1># curl myip.ipip.net</h1>
     <pre>
     当前 IP：114.110.1.38  来自于：中国 北京 北京 联通/电信
+    </pre>
+    
+     <h1>$ curl ipinfo.io</h1>
+    <pre>
+    {
+      "ip": "114.244.143.18",
+      "city": "Beijing",
+      "region": "Beijing",
+      "country": "CN",
+      "loc": "39.9075,116.3972",
+      "org": "AS4808 China Unicom Beijing Province Network",
+      "timezone": "Asia/Shanghai",
+      "readme": "https://ipinfo.io/missingauth"
+    }
+    </pre>
 
+    <pre>
     # curl http://members.3322.org/dyndns/getip
     114.110.1.38
 
@@ -48,21 +64,6 @@
     # 测试网络是IPv4还是IPv6访问优先(访问IPv4/IPv6双栈站点，如果返回IPv6地址，则IPv6访问优先)
     curl test.ipw.cn
 
-    </pre>
-    
-    
-    <h1>$ curl ipinfo.io</h1>
-    <pre>
-    {
-      "ip": "114.244.143.18",
-      "city": "Beijing",
-      "region": "Beijing",
-      "country": "CN",
-      "loc": "39.9075,116.3972",
-      "org": "AS4808 China Unicom Beijing Province Network",
-      "timezone": "Asia/Shanghai",
-      "readme": "https://ipinfo.io/missingauth"
-    }
     </pre>
     
     <h1>$ curl ifconfig.me</h1>    
