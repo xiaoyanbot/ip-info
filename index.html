@@ -8,126 +8,68 @@
     <title>#000000</title>
     <link type="image/x-icon" rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHklEQVQ4T2NkYGD4z0ABYBw1gGE0DBhGw4BhWIQBAE5OEAELnjVHAAAAAElFTkSuQmCC">
     <style>
-        :root {
-            --color: #000000;
-            --color-transparent: #00000022;
-        }
-
-        ::selection {
-            background: var(--color-transparent);
-        }
-
-        html,
-        body {
-            background: var(--color);
-            height: 100%;
-            margin: 0;
-        }
-
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        #color {
-            background: white;
-            color: var(--color);
-            font-size: 2.5rem;
-            font-weight: 300;
-            padding: 2.25rem 3rem;
-            font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-            cursor: text;
-        }
+       
     </style>
 </head>
 
 <body>
-    <p id="color">#000000</p>
-    <script>
-        function randomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
-        }
+<pre>
+liuzhizhi@lzz-rmbp|~ # curl cip.cc
+IP  : 114.110.1.38
+地址  : 中国  北京市
+数据二 : 北京市 | 广东恒敦通信技术北京分公司
+URL : http://www.cip.cc/114.110.1.38
 
-        function hslToHex(h, s, l) {
-            h /= 360;
-            s /= 100;
-            l /= 100;
-            var r = void 0,
-                g = void 0,
-                b = void 0;
-            if (s === 0) {
-                r = g = b = l; // achromatic
-            } else {
-                var hue2rgb = function hue2rgb(p, q, t) {
-                    if (t < 0) t += 1;
-                    if (t > 1) t -= 1;
-                    if (t < 1 / 6) return p + (q - p) * 6 * t;
-                    if (t < 1 / 2) return q;
-                    if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-                    return p;
-                };
-                var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-                var p = 2 * l - q;
-                r = hue2rgb(p, q, h + 1 / 3);
-                g = hue2rgb(p, q, h);
-                b = hue2rgb(p, q, h - 1 / 3);
-            }
-            var toHex = function toHex(x) {
-                var hex = Math.round(x * 255).toString(16);
-                return hex.length === 1 ? '0' + hex : hex;
-            };
-            return '#' + toHex(r) + toHex(g) + toHex(b);
-        }
+liuzhizhi@lzz-rmbp|~ # curl myip.ipip.net
+当前 IP：114.110.1.38  来自于：中国 北京 北京 联通/电信
 
-        window.onload = function () {
-            let stopProp = function (ev) {
-                ev.stopPropagation();
-            }
+liuzhizhi@lzz-rmbp|logs # curl http://members.3322.org/dyndns/getip
+114.110.1.38
 
-            var colorElement = document.getElementById("color");
-            colorElement.addEventListener("click", stopProp, false);
-            colorElement.addEventListener("mousedown", stopProp, false);
+$ curl icanhazip.com
+222.129.53.200
 
-            var setFavicon = function (hex) {
-                var canvas = document.createElement('canvas');
-                canvas.width = 16;
-                canvas.height = 16;
-                var ctx = canvas.getContext('2d');
-                ctx.fillStyle = hex;
-                ctx.fillRect(0, 0, 16, 16);
-                document.getElementsByTagName('link')[0].href = canvas.toDataURL("image/x-icon");
-            }
+$ curl ip.sb
+222.129.53.200
 
-            var setRandomColor = function setRandomColor() {
-                var h = void 0,
-                    s = void 0,
-                    l = void 0;
+$ curl ident.me
+222.129.53.200%
 
-                h = randomInt(0, 359);
-                s = randomInt(55, 75);
-                l = randomInt(40, 60);
+$ curl inet-ip.info
+222.129.53.200
 
-                document.documentElement.style.setProperty('--color', 'hsl(' + h + ', ' + s + '%, ' + l + '%)');
-                var hex = hslToHex(h, s, l);
-                document.title = hex;
-                colorElement.innerHTML = hex;
-                document.documentElement.style.setProperty('--color-transparent', hex + '22');
-
-                setFavicon(hex);
-            };
-            setRandomColor();
-
-            var body = document.getElementsByTagName("body")[0];
-            body.addEventListener("mousedown", function (ev) {
-                ev.preventDefault();
-            });
-            body.addEventListener("click", function () {
-                setRandomColor();
-            }, false);
-        };
-    </script>
+$ curl ipw.cn
+    
+    ipinfo.io
+$ curl ipinfo.io
+{
+  "ip": "114.244.143.18",
+  "city": "Beijing",
+  "region": "Beijing",
+  "country": "CN",
+  "loc": "39.9075,116.3972",
+  "org": "AS4808 China Unicom Beijing Province Network",
+  "timezone": "Asia/Shanghai",
+  "readme": "https://ipinfo.io/missingauth"
+}
+复制
+cip.cc
+$ curl cip.cc
+IP  : 114.244.143.18
+地址  : 中国  北京
+运营商 : 联通
+数据二 : 北京市 | 联通
+数据三 : 中国北京北京 | 联通
+URL : http://www.cip.cc/114.244.143.18
+复制
+myip.ipip.net
+$ curl myip.ipip.net
+当前 IP：114.244.143.18  来自于：中国 北京 北京  联通
+复制
+ifconfig.me
+$ curl ifconfig.me
+114.244.143.18
+</pre>
 </body>
 
 </html>
