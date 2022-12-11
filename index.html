@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>#000000</title>
-    <link type="image/x-icon" rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHklEQVQ4T2NkYGD4z0ABYBw1gGE0DBhGw4BhWIQBAE5OEAELnjVHAAAAAElFTkSuQmCC">
+    <title>IP Info</title>
     <style>
        backgroud-color:#000; color:#fff;
     </style>
@@ -41,7 +39,14 @@
     $ curl inet-ip.info
     222.129.53.200
 
-    $ curl ipw.cn
+    # 查询本机外网IPv4地址
+    curl 4.ipw.cn
+
+    # 查询本机外网IPv6地址
+    curl 6.ipw.cn
+
+    # 测试网络是IPv4还是IPv6访问优先(访问IPv4/IPv6双栈站点，如果返回IPv6地址，则IPv6访问优先)
+    curl test.ipw.cn
 
     </pre>
     
@@ -60,27 +65,8 @@
     }
     </pre>
     
-    <h1> $ curl cip.cc </h1>
+    <h1>$ curl ifconfig.me</h1>    
     <pre>
-    IP  : 114.244.143.18
-    地址  : 中国  北京
-    运营商 : 联通
-    数据二 : 北京市 | 联通
-    数据三 : 中国北京北京 | 联通
-    URL : http://www.cip.cc/114.244.143.18
-    
-    </pre>
-    
-    <h1> $ curl myip.ipip.net </h1>
-    <pre>
-    
-    
-    当前 IP：114.244.143.18  来自于：中国 北京 北京  联通
-    
-    
-    ifconfig.me
-    
-    $ curl ifconfig.me
     114.244.143.18
 </pre>
 </body>
